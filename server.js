@@ -1,31 +1,25 @@
 const express = require("express");
+const path = require("path");
+const router = require("express").Router();
+const routes = require("./server/routes/api/index");
 const mongoose = require("mongoose");
-const routes = require("./routes");
-const app = express();
+const db = require("./server/db");
 const PORT = process.env.PORT || 3003;
+const app = express();
+const bookController = require("./server/controllers/bookController");
 
-// Configure body parsing for AJAX requests
+// Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-// Serve up static assets
-if (process.env.NODE_ENV === "production")  {
-    app.use(express.static("client/build"));
-}
-
-// Add routes, both API and view
 app.use(routes);
+// Serve static assets
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+// Connect to database
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooksearch");
 
-// Connect to MongoDB
-mongoose.connect(
-    process.env.MONGO_URI || "mongodb://user1:password1ds125871.mlab.com:25871/heroku_0xn0jnk7",
-    {
-        useCreateIndex: true,
-        useNewUrlParser: true
-    }
-);
-
-// Start the API server
-app.listen(PORT, () =>  
-    console.log(`🌎 ==> API server listening on PORT ${PORT}!`)
-);
+// Connect to server
+app.listen(PORT, () => {
+  console.log(`🌎 ==> API server is now on port ${PORT}!`);
+});
