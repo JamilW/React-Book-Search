@@ -44,9 +44,8 @@ Saved - Renders all books saved to the Mongo database. User has an option to "Vi
 
 
 
-Start by using the 07-Ins_Mern example as a base for your application.
-Add code to connect to a MongoDB database named googlebooks using the mongoose npm package.
-Using mongoose, then create a Book schema.
+Added code to connect to a MongoDB database named googlebooks using the mongoose npm package.
+Using mongoose, then created a Book schema.
 Books have the following fields:
 
 
