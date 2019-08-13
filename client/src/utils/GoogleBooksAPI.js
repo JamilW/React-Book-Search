@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const BASEURL = "https://www.googleapis.com/books/v1/volumes?q=";
-const APIKEY = "&AIzaSyAyH2stwsAYO7v_zZz3XlgUjdKMXFC90PE";
+const APIKEY = "&process.env.API_KEY";
 
 export default {
     search: function(query) {
