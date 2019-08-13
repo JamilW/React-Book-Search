@@ -1,6 +1,6 @@
 import axios from "axios";
 const BASEURL = "https://www.googleapis.com/books/v1/volumes?q=";
-const APIKEY = "&process.env.API_KEY";
+const APIKEY = "&process.env.REACT_APP_API_KEY";
 
 export default {
   // Gets all books
