@@ -49,4 +49,4 @@ I added the following Express routes for my app:
 /api/books (get) - Returns all saved books as JSON.
 /api/books (post) - Used to save a new book to the database.
 /api/books/:id (delete) - Used to delete a book from the database by Mongo _id.
-    * (get) - Loads my single HTML page in client/build/index.html. 
+** (get) - Loads my single HTML page in client/build/index.html. 
