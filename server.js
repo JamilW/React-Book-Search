@@ -17,7 +17,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 // Connect to database
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooksearch");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://user1:dbpassword1@ds261817.mlab.com:61817/heroku_xspnmvbz");
 
 // Connect to server
 app.listen(PORT, () => {
